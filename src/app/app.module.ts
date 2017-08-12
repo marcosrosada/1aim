@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
+import { NouisliderModule } from 'ng2-nouislider';
 
 import { AppRouting } from './app.routing';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HttpModule,
     MaterializeModule,
+    NouisliderModule,
     AppRouting
   ],
   providers: [],
