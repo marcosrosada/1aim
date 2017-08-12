@@ -1,0 +1,11 @@
+.logo {
+    width: 74px;
+    padding-left: 10px;
+}
+.bar-color {
+    height: 5px;       
+    background: -webkit-linear-gradient(90deg, #00A0DB, #362A83, #A01F80, #E40274, #E31E2F, #EC7B23, #FFE900, #9ABD36, #009547);
+    background: -o-linear-gradient(90deg, #00A0DB, #362A83, #A01F80, #E40274, #E31E2F, #EC7B23, #FFE900, #9ABD36, #009547);
+    background: -moz-linear-gradient(90deg, #00A0DB, #362A83, #A01F80, #E40274, #E31E2F, #EC7B23, #FFE900, #9ABD36, #009547);
+    background: linear-gradient(90deg, #00A0DB, #362A83, #A01F80, #E40274, #E31E2F, #EC7B23, #FFE900, #9ABD36, #009547);
+}
