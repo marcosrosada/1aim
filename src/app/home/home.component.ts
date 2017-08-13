@@ -1,3 +1,4 @@
+import { HomeService } from './home.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  private materializeParams = {min: new Date()};
+  materializeParams = [{ 
+    min: new Date(),
+    selectYears: 15,
+    closeOnSelect: true//,
+    //format: 'dd/mm/yyyy'
+  }];
+  searchDate: string = '';
 
-  constructor() { }
+  constructor(private _homeService: HomeService) { }
 
   ngOnInit() {
+  }
+
+  
+  onSearch() {
+    console.log(new Date(this.searchDate));
+    this._homeService.getRooms(new Date(this.searchDate).getTime()/1000);
   }
 
 }
