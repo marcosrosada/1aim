@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="col s3">
+  <div class="col s10">
       <div class="input-field">
-        <input type="date" name="dtBoarding" [(ngModel)]="filterdtBoarding" required  />
+        <input type="date" class="datepicker" materialize="pickadate" [materializeParams]="[materializeParams]">
         <label class="active" for="tx_func">Date</label>
       </div>
   </div>
