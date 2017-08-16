@@ -1,19 +1,42 @@
-<section>
-    <article>
-        <h3>{{ room.name }}</h3>
+<!--<section>-->
+<!--    <article>-->
+<!--        <h3>{{ room.name }}</h3>-->
 
-        <div class="row">
-            <div class="col s3">
-                <p>
-                    <span class="title">Location:</span> {{ room.location }}
-                </p>
-                <p>
-                    <span class="title">capacity:</span> {{ room.capacity }}
-                </p>
-            </div>
-            <div class="col s9">
-                <img [src]="'https://challenges.1aim.com/roombooking/' + room.images[0]" alt="Room Image"/>
-            </div>
-        </div>
-    </article>
-</section>
+<!--        <div class="row">-->
+<!--            <div class="col s3">-->
+                <!--<p>-->
+                <!--    <span class="title">Location:</span> {{ room.location }}-->
+                <!--</p>-->
+                <!--<p>-->
+                <!--    <span class="title">capacity:</span> {{ room.capacity }}-->
+                <!--</p>-->
+<!--            </div>-->
+<!--            <div class="col s8">-->
+<!--                <img [src]="'https://challenges.1aim.com/roombooking/' + room.images[0]" alt="Room Image"/>-->
+<!--            </div>-->
+<!--        <div class="col s1 right-align">-->
+<!--            <button class="btn waves-effect waves-light blue-grey darken-4" (click)="onGetRooms()">-->
+<!--              Details-->
+<!--            </button>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--    </article>-->
+<!--</section>-->
+
+<div class="card hoverable small">
+    <div class="card-image">
+        <img [src]="'https://challenges.1aim.com/roombooking/' + room.images[0]">
+        <span class="card-title">{{ room.name }}</span>
+    </div>
+    <div class="card-content">
+        <p>
+            <span class="title">Location:</span> {{ room.location }}
+        </p>
+        <p>
+            <span class="title">capacity:</span> {{ room.capacity }}
+        </p>
+    </div>
+    <div class="card-action">
+        <a href="#">Click to see more ...</a>
+    </div>
+</div>
