@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class HomeService {
@@ -9,9 +8,6 @@ export class HomeService {
   
   getRooms(date:any) {
     return this.http.post('https://challenges.1aim.com/roombooking/getrooms', date)
-      .map(res => res)
-      .subscribe(dados => {
-        console.log(dados);
-      });
+      .map((res:Response) => res.json());
   }
 }

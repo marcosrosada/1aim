@@ -12,4 +12,5 @@
     </button>
   </div>
 </div>
-<!-- <nouislider [config]="someRange2config" [limit]="10" [(ngModel)]="someRange2"></nouislider> -->
+
+<app-room *ngFor="let room of listRooms" [room]="room"></app-room>

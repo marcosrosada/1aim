@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import 'rxjs/add/operator/map';
 
 import { HomeService } from './home.service';
 
@@ -10,10 +11,12 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit {
 
   private filterDate: Date = null;
+  private listRooms: any = [];
   
   private materializeParams = {
     min: new Date(),
-    closeOnSelect: true
+    closeOnSelect: true,
+    setValue: ''
   };
 
   constructor(private homeService: HomeService) { }
@@ -22,7 +25,10 @@ export class HomeComponent implements OnInit {
   }
   
   onGetRooms() {
-    this.homeService.getRooms( { date: new Date(this.filterDate).getTime() } );
+    this.homeService.getRooms( { date: new Date(this.filterDate).getTime() } )
+      .subscribe(dados => {
+        this.listRooms = dados;
+      });
   }
 
 }
