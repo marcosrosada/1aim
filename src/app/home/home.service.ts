@@ -1,19 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class HomeService {
 
   constructor(private http: Http) { }
-
-
-  getRooms(searchDate:any) {
-    this.http.post('https://challenges.1aim.com/roombooking/getrooms', JSON.stringify({ date: searchDate }))
-      .map(res => res)
-      .subscribe(dados => {
-        console.log(dados);
-      });
+  
+  getRooms(date:any) {
+    console.log(date);
+    return this.http.post('https://challenges.1aim.com/roombooking/getrooms', date)
+      .map((res:Response) => res.json());
   }
-
 }

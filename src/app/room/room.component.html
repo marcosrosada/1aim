@@ -1,3 +1,18 @@
-<p>
-  room works!
-</p>
+<div class="card hoverable small">
+    <div class="card-image">
+        <!--<img src="../assets/room.jpg">-->
+        <img [src]="'https://challenges.1aim.com/roombooking/' + room.images[0]">
+        <span class="card-title">{{ room.name }}</span>
+    </div>
+    <div class="card-content">
+        <p>
+            Location:<span class="bold"> {{ room.location }}</span>
+        </p>
+        <p>
+            Capacity:<span class="bold"> {{ room.capacity }}</span>
+        </p>
+    </div>
+    <div class="card-action">
+        <a href="#">Click to see Room Details ...</a>
+    </div>
+</div>

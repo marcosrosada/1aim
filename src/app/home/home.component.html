@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col s9">
       <div class="input-field">
-        <input type="date" class="datepicker" materialize="pickadate" [materializeParams]="materializeParams" [(ngModel)]="searchDate">
+        <input type="date" class="datepicker" materialize="pickadate" [materializeParams]="materializeParams" [(ngModel)]="filterDate">
         <label class="active" for="tx_func">Date</label>
       </div>
   </div>
@@ -13,4 +13,5 @@
     </button>
   </div>
 </div>
-<!-- <nouislider [config]="someRange2config" [limit]="10" [(ngModel)]="someRange2"></nouislider> -->
+
+<app-room *ngFor="let room of listRooms" [room]="room"></app-room>

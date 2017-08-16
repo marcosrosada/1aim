@@ -1,5 +1,7 @@
-import { HomeService } from './home.service';
 import { Component, OnInit } from '@angular/core';
+import 'rxjs/add/operator/map';
+
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -8,23 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  filterDate: Date = null;
+  listRooms: any = [];
   materializeParams = [{ 
     min: new Date(),
     selectYears: 15,
-    closeOnSelect: true//,
-    //format: 'dd/mm/yyyy'
+    closeOnSelect: true
   }];
-  searchDate: string = '';
 
-  constructor(private _homeService: HomeService) { }
+
+  constructor(private homeService: HomeService) { }
 
   ngOnInit() {
   }
-
   
   onSearch() {
-    console.log(new Date(this.searchDate));
-    this._homeService.getRooms(new Date(this.searchDate).getTime()/1000);
+    this.homeService.getRooms( { date: new Date(this.filterDate).getTime() } )
+      .subscribe(dados => {
+        this.listRooms = dados;
+      });
   }
+
+  
+  // onSearch() {
+  //   this._homeService.getRooms(new Date(this.searchDate).getTime()/1000);
+  // }
 
 }
