@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col s10">
       <div class="input-field">
-        <input type="date" class="datepicker" materialize="pickadate" [materializeParams]="[materializeParams]">
+        <input type="date" class="datepicker" materialize="pickadate" [materializeParams]="[materializeParams]" [(ngModel)]="filterDate">
         <label class="active" for="tx_func">Date</label>
       </div>
   </div>
 
   <div class="col s2">
-    <button class="btn waves-effect waves-light blue-grey darken-4 mar-t-25" (click)="createBoarding()">
+    <button class="btn waves-effect waves-light blue-grey darken-4" (click)="onGetRooms()">
       Search
     </button>
   </div>
