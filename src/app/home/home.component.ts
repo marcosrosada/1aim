@@ -18,13 +18,14 @@ export class HomeComponent implements OnInit {
   
   materializeParams = [{ 
     min: new Date(),
-    closeOnSelect: true
-    //onSet: function (e) {
-    //   if (e.select) {
-    //     //this.listRooms = [];
-    //   }
-    //}
+    closeOnSelect: true,
+    onSet: function(e) {
+      if (e.select) {
+        this.filterDate = new Date(e.select);
+      }
+    }
   }];
+  
 
   constructor(
       private homeService: HomeService,
@@ -34,24 +35,23 @@ export class HomeComponent implements OnInit {
       this.filterDate = new Date();
   }
 
+
   ngOnInit() {
     this.inscription = this.route.queryParams.subscribe( (queryParams: any) => {
-      console.log(queryParams.date)
-      if (queryParams.date)
+      if (queryParams.date) {
         this.filterDate = new Date( parseInt(queryParams['date']) );
+      }
     });
     
     this.onSearch();
   }
+
 
   ngOnDestroy() {
     this.inscription.unsubscribe();
   }
   
   onSearch() {
-    console.log(this.filterDate);
-    console.log('new Date', new Date(this.filterDate));
-    console.log("getTime()", new Date(this.filterDate).getTime());
     this.homeService.getRooms( { date: new Date(this.filterDate).getTime() } )
       .subscribe(dados => {
         this.listRooms = dados;
