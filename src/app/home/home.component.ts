@@ -13,6 +13,7 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit {
 
   filterDate: any;
+  listCapacities: any = [];
   listRooms: any = [];
   filterRoom: string;
   inscription: Subscription;
@@ -48,12 +49,17 @@ export class HomeComponent implements OnInit {
     this.inscription.unsubscribe();
   }
   
+  
   onSearch() {
     this.homeService.getRooms( { date: new Date(this.filterDate).getTime() } )
       .subscribe(dados => {
         this.listRooms = dados;
+      
+        this.listCapacities = dados.map( item => item.capacity);
+        this.listCapacities.sort((a, b) => a - b);
       });
   }
+  
   
   getRoomList() {
     if (this.listRooms.length === 0 || this.filterRoom === undefined || this.filterRoom.trim() === '') {

@@ -18,13 +18,15 @@
 </div>
 
 <div class="row" *ngIf="listRooms.length > 0">
-    <div class="input-field col s7">
+    <div class="input-field col 7">
       <input id="filterRoom" type="text" class="validate" [(ngModel)]="filterRoom" name="filterRoom" placeholder="Type to filter room by Name">
       <label class="active" for="filterRoom">Name</label>
     </div>
     
     <div class="input-field col s2">
-      <input id="filterCapacity" type="text" class="validate" [(ngModel)]="filterCapacity" name="filterCapacity" placeholder="Filter by Capacity">
+      <select id="filterCapacity" name="filterCapacity" [(ngModel)]="filterCapacity" placeholder="Filter by Capacity">
+        <option *ngFor="let capacity of listCapacities" >{{ capacity }}</option>
+      </select>
       <label class="active" for="filterCapacity">Capacity</label>
     </div>
     
