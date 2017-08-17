@@ -18,16 +18,23 @@
 </div>
 
 <div class="row" *ngIf="listRooms.length > 0">
-    <div class="input-field col 7">
+    <div class="input-field col s7">
       <input id="filterRoom" type="text" class="validate" [(ngModel)]="filterRoom" name="filterRoom" placeholder="Type to filter room by Name">
       <label class="active" for="filterRoom">Name</label>
     </div>
     
     <div class="input-field col s2">
-      <select id="filterCapacity" name="filterCapacity" [(ngModel)]="filterCapacity" placeholder="Filter by Capacity">
-        <option *ngFor="let capacity of listCapacities" >{{ capacity }}</option>
+      <!--<select id="filterCapacity" name="filterCapacity" [(ngModel)]="filterCapacity" placeholder="Filter by Capacity">-->
+      <!--  <option *ngFor="let capacity of listCapacities" >{{ capacity }}</option>-->
+      <!--</select>-->
+      <!--<label class="active" for="filterCapacity">Capacity</label>-->
+      <select>
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
       </select>
-      <label class="active" for="filterCapacity">Capacity</label>
+      <label>Materialize Select</label>
     </div>
     
     <div class="input-field col s3">
@@ -35,5 +42,6 @@
       <label class="active" for="filterLocation">Location</label>
     </div>
 </div>
+
 
 <app-room *ngFor="let room of getRoomList() | filterLocation:filterLocation | filterCapacity:filterCapacity" [room]="room"></app-room>
