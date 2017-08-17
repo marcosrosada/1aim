@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" *ngIf="listRooms.length > 0">
     <div class="input-field col s9">
       <input id="filterRoom" type="text" class="validate">
       <label for="filterRoom">Filter room</label>
