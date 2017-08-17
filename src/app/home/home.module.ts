@@ -8,6 +8,8 @@ import { NouisliderModule } from 'ng2-nouislider';
 
 import { HomeComponent } from './home.component';
 import { RoomComponent } from '../room/room.component';
+import { FilterLocationPipe } from '../shared/filter-location.pipe';
+import { FilterCapacityPipe } from '../shared/filter-capacity.pipe';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { RoomComponent } from '../room/room.component';
   ],
   declarations: [
     HomeComponent,
-    RoomComponent
+    RoomComponent,
+    FilterLocationPipe,
+    FilterCapacityPipe
   ]
 })
 export class HomeModule { }

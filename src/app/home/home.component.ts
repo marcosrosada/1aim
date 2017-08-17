@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   filterDate: any;
   listRooms: any = [];
+  filterRoom: string;
   inscription: Subscription;
   
   materializeParams = [{ 
@@ -56,5 +57,15 @@ export class HomeComponent implements OnInit {
       .subscribe(dados => {
         this.listRooms = dados;
       });
+  }
+  
+  getRoomList() {
+    if (this.listRooms.length === 0 || this.filterRoom === undefined || this.filterRoom.trim() === '') {
+      return this.listRooms;
+    }
+
+    return this.listRooms.filter(
+       v => v.name.toLocaleLowerCase().includes(this.filterRoom.toLocaleLowerCase())
+    );
   }
 }

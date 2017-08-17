@@ -18,10 +18,20 @@
 </div>
 
 <div class="row" *ngIf="listRooms.length > 0">
-    <div class="input-field col s9">
-      <input id="filterRoom" type="text" class="validate">
-      <label for="filterRoom">Filter room</label>
+    <div class="input-field col s7">
+      <input id="filterRoom" type="text" class="validate" [(ngModel)]="filterRoom" name="filterRoom" placeholder="Type to filter room by Name">
+      <label class="active" for="filterRoom">Name</label>
+    </div>
+    
+    <div class="input-field col s2">
+      <input id="filterCapacity" type="text" class="validate" [(ngModel)]="filterCapacity" name="filterCapacity" placeholder="Filter by Capacity">
+      <label class="active" for="filterCapacity">Capacity</label>
+    </div>
+    
+    <div class="input-field col s3">
+      <input id="filterLocation" type="text" class="validate" [(ngModel)]="filterLocation" name="filterLocation" placeholder="Filter by Location">
+      <label class="active" for="filterLocation">Location</label>
     </div>
 </div>
 
-<app-room *ngFor="let room of listRooms" [room]="room"></app-room>
+<app-room *ngFor="let room of getRoomList() | filterLocation:filterLocation | filterCapacity:filterCapacity" [room]="room"></app-room>
