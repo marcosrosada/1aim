@@ -14,10 +14,13 @@ export class HomeComponent implements OnInit {
   listRooms: any = [];
   materializeParams = [{ 
     min: new Date(),
-    selectYears: 15,
     closeOnSelect: true
+    // onSet: function (e) {
+    //   if (e.select) {
+    //     //this.listRooms = [];
+    //   }
+    // }
   }];
-
 
   constructor(private homeService: HomeService) { }
 
@@ -30,10 +33,4 @@ export class HomeComponent implements OnInit {
         this.listRooms = dados;
       });
   }
-
-  
-  // onSearch() {
-  //   this._homeService.getRooms(new Date(this.searchDate).getTime()/1000);
-  // }
-
 }

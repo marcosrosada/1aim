@@ -14,4 +14,11 @@
   </div>
 </div>
 
+<div class="row">
+    <div class="input-field col s9">
+      <input id="filterRoom" type="text" class="validate">
+      <label for="filterRoom">Filter room</label>
+    </div>
+</div>
+
 <app-room *ngFor="let room of listRooms" [room]="room"></app-room>

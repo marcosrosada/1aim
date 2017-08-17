@@ -4,15 +4,26 @@
         <img [src]="'https://challenges.1aim.com/roombooking/' + room.images[0]">
         <span class="card-title">{{ room.name }}</span>
     </div>
-    <div class="card-content">
-        <p>
-            Location:<span class="bold"> {{ room.location }}</span>
-        </p>
-        <p>
-            Capacity:<span class="bold"> {{ room.capacity }}</span>
-        </p>
+    <div class="card-content row">
+        <div class="col s6">
+            <p>
+                Location:<span class="bold"> {{ room.location }}</span>
+            </p>
+            <p>
+                Capacity:<span class="bold"> {{ room.capacity }}</span>
+            </p>
+        </div>
+        <div class="col s6">
+            <p>
+                Size:<span class="bold"> {{ room.size }}</span>
+            </p>
+            <p>
+                Equipments:<span class="bold"> {{ room.equipment ? 'Yes' : 'No' }}</span>
+            </p>
+        </div>
+        
     </div>
     <div class="card-action">
-        <a href="#">Click to see Room Details ...</a>
+        <a href="#">Click here to view room ...</a>
     </div>
 </div>
