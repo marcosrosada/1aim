@@ -19,19 +19,15 @@ export class HomeComponent implements OnInit {
   
   materializeParams = [{ 
     min: new Date(),
-    closeOnSelect: true,
-    onSet: function(e) {
-      if (e.select) {
-        this.filterDate = new Date(e.select);
-      }
-    }
+    closeOnSelect: true
   }];
   
 
   constructor(
       private homeService: HomeService,
       private route: ActivatedRoute
-    ) { 
+    ) 
+  { 
       
       this.filterDate = new Date();
   }
