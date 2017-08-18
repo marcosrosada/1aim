@@ -24,17 +24,11 @@
     </div>
     
     <div class="input-field col s2">
-      <!--<select id="filterCapacity" name="filterCapacity" [(ngModel)]="filterCapacity" placeholder="Filter by Capacity">-->
-      <!--  <option *ngFor="let capacity of listCapacities" >{{ capacity }}</option>-->
-      <!--</select>-->
-      <!--<label class="active" for="filterCapacity">Capacity</label>-->
-      <select>
-        <option value="" disabled selected>Choose your option</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
+      <select materialize="material_select" id="filterCapacity" name="filterCapacity" [(ngModel)]="filterCapacity" placeholder="Filter by Capacity">
+          <option value="" disabled selected></option>
+          <option *ngFor="let capacity of listCapacities" [value]="capacity">{{ capacity }}</option>
       </select>
-      <label>Materialize Select</label>
+      <label class="active" for="filterCapacity">Capacity</label>
     </div>
     
     <div class="input-field col s3">
