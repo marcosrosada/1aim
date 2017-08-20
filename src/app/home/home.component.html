@@ -24,11 +24,12 @@
     </div>
     
     <div class="input-field col s2">
-      <select materialize="material_select" id="filterCapacity" name="filterCapacity" [(ngModel)]="filterCapacity" placeholder="Filter by Capacity">
-          <option value="" disabled selected></option>
+      <select materialize="material_select" id="filterCapacity" name="filterCapacity" [(ngModel)]="filterCapacity" (change)="onChangeCapacity()">
+          <option value="" disabled selected>Select Capacity</option>
+          <option value="" ></option>
           <option *ngFor="let capacity of listCapacities" [value]="capacity">{{ capacity }}</option>
       </select>
-      <label class="active" for="filterCapacity">Capacity</label>
+      <label class="select-label active" for="filterCapacity">Capacity</label>
     </div>
     
     <div class="input-field col s3">

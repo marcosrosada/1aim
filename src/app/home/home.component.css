@@ -9,3 +9,7 @@ button {
 .row {
     margin-bottom: 0px;
 }
+
+.select-label {
+    top: 0px !important;
+}
