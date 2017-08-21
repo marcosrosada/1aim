@@ -56,16 +56,17 @@ export class HomeComponent implements OnInit {
     let dateDTO = { date: new Date(this.filterDate).getTime() };
     
     this.homeService.getRooms( dateDTO )
-      .subscribe(dados => {
-        this.listRooms = dados;
+      .subscribe(data => {
+        this.listRooms = data;
 
-        // this.router.navigate([], {
-        //     queryParams: dateDTO
-        // });
-      
-        this.listCapacities = dados.map( item => item.capacity);
-        this.listCapacities.sort((a, b) => a - b);
+        this.getListCapacity(data);
       });
+  }
+  
+
+  getListCapacity(data) {
+    this.listCapacities = data.map( item => item.capacity);
+    this.listCapacities.sort((a, b) => a - b);
   }
   
   
