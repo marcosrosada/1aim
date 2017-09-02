@@ -12,11 +12,10 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit {
 
-  filterDate: any;
-  listCapacities: any = [];
   listRooms: any = [];
-  filterCapacity:any = undefined;
+  filterDate: any;
   filterRoom: string;
+  filterLocation: string;
   inscription: Subscription;
   
   materializeParams = [{ 
@@ -53,20 +52,14 @@ export class HomeComponent implements OnInit {
   
   
   onSearch() {
+    this.filterRoom = '';
+    this.filterLocation = '';
     let dateDTO = { date: new Date(this.filterDate).getTime() };
     
     this.homeService.getRooms( dateDTO )
       .subscribe(data => {
         this.listRooms = data;
-
-        this.getListCapacity(data);
       });
-  }
-  
-
-  getListCapacity(data) {
-    this.listCapacities = data.map( item => item.capacity);
-    this.listCapacities.sort((a, b) => a - b);
   }
   
   
@@ -78,10 +71,5 @@ export class HomeComponent implements OnInit {
     return this.listRooms.filter(
        v => v.name.toLocaleLowerCase().includes(this.filterRoom.toLocaleLowerCase())
     );
-  }
-
-
-  onChangeCapacity() {
-    this.filterCapacity = this.filterCapacity === '' ? undefined : this.filterCapacity;
   }
 }

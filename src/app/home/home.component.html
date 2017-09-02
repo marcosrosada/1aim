@@ -18,18 +18,9 @@
 </div>
 
 <div class="row" *ngIf="listRooms.length > 0">
-    <div class="input-field col s7">
+    <div class="input-field col s9">
       <input id="filterRoom" type="text" class="validate" [(ngModel)]="filterRoom" name="filterRoom" placeholder="Type to filter room by Name">
       <label class="active" for="filterRoom">Name</label>
-    </div>
-    
-    <div class="input-field col s2">
-      <select materialize="material_select" id="filterCapacity" name="filterCapacity" [(ngModel)]="filterCapacity" (change)="onChangeCapacity()">
-          <option value="" disabled selected>Select Capacity</option>
-          <option value="" ></option>
-          <option *ngFor="let capacity of listCapacities" [value]="capacity">{{ capacity }}</option>
-      </select>
-      <label class="select-label active" for="filterCapacity">Capacity</label>
     </div>
     
     <div class="input-field col s3">
