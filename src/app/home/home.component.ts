@@ -59,6 +59,8 @@ export class HomeComponent implements OnInit {
     this.homeService.getRooms( dateDTO )
       .subscribe(data => {
         this.listRooms = data;
+
+        this.router.navigate([], {  queryParams: dateDTO });
       });
   }
   

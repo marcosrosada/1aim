@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RoomComponent implements OnInit {
 
   @Input() room: any = {};
+  @Input() date: any;
   
   constructor() { }
 

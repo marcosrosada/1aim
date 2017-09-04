@@ -30,4 +30,5 @@
 </div>
 
 
-<app-room *ngFor="let room of getRoomList() | filterLocation:filterLocation | filterCapacity:filterCapacity" [room]="room"></app-room>
+<app-room *ngFor="let room of getRoomList() | filterLocation:filterLocation" 
+          [room]="room"></app-room>

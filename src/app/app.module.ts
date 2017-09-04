@@ -16,7 +16,6 @@ import { HomeComponent } from './home/home.component';
 import { RoomComponent } from './room/room.component';
 import { RoomDetailsComponent } from './room/room-details/room-details.component';
 import { FilterLocationPipe } from './shared/filter-location.pipe';
-import { FilterCapacityPipe } from './shared/filter-capacity.pipe';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { FilterCapacityPipe } from './shared/filter-capacity.pipe';
     HomeComponent,
     RoomComponent,
     RoomDetailsComponent,
-    FilterLocationPipe,
-    FilterCapacityPipe
+    FilterLocationPipe
   ],
   imports: [
     BrowserModule,
